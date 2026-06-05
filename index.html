@@ -5,24 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Денис Шаповалов | Психолог</title>
     <style>
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #333; text-align: center; padding: 20px; }
-        .container { max-width: 450px; margin: 0 auto; background: #fff; padding: 40px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        h1 { margin-bottom: 10px; font-size: 24px; }
-        p { color: #666; margin-bottom: 30px; font-size: 16px; }
-        .btn { display: block; width: 100%; padding: 14px; margin: 12px 0; border: none; border-radius: 12px; color: white; text-decoration: none; font-weight: 600; transition: transform 0.2s, opacity 0.2s; box-sizing: border-box; }
-        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
-        .btn-blue { background: #0088cc; } /* Telegram */
-        .btn-purple { background: #7360f2; } /* Viber */
-        .btn-green { background: #25d366; } /* WhatsApp */
-        .btn-dark { background: #333; } /* Book */
-        .btn-grey { background: #555; } /* Other */
-        hr { margin: 30px 0; border: 0; border-top: 1px solid #eee; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1e293b; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 450px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            padding: 40px; 
+            border-radius: 24px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+        }
+        h1 { margin-bottom: 8px; font-size: 28px; font-weight: 600; }
+        .subtitle { color: #64748b; font-size: 15px; margin-bottom: 30px; font-weight: 500;}
+        
+        .about-text { 
+            font-size: 15px; 
+            line-height: 1.6; 
+            color: #334155; 
+            margin-bottom: 35px; 
+            text-align: left; 
+        }
+        
+        .btn { 
+            display: block; 
+            width: 100%; 
+            padding: 16px; 
+            margin: 12px 0; 
+            border: none; 
+            border-radius: 14px; 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: all 0.3s ease; 
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        
+        .btn-blue { background: #0088cc; } 
+        .btn-purple { background: #7360f2; } 
+        .btn-green { background: #25d366; } 
+        .btn-dark { background: #1e293b; } 
+        
+        hr { margin: 30px 0; border: 0; border-top: 1px solid #e2e8f0; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Денис Шаповалов</h1>
-        <p>Психолог, педагог. 15 років досвіду.</p>
+        <p class="subtitle">Психолог, педагог</p>
+        
+        <div class="about-text">
+            <strong>Психолог для тих, хто шукає результат, а не просто розмови.</strong><br><br>
+            Мій підхід — це синтез психотерапевтичних методів та глибокої педагогічної експертизи. Я вірю, що ментальне здоров'я — це навичка, яку можна розвивати.<br><br>
+            Працюю в психологічній практиці з 2016 року. Допомагаю підліткам, дорослим та сімейним парам проходити через кризи, долати тривогу та вибудовувати гармонійні стосунки. За 15 років у освіті я навчився пояснювати складні внутрішні процеси простою мовою. Мій авторський контент допомагає тисячам, але саме в індивідуальній роботі ми з вами знайдемо те, що потрібно саме вам.
+        </div>
         
         <a href="https://t.me/shapovalovexpert" class="btn btn-blue">Telegram</a>
         <a href="viber://chat?number=%2B380964018889" class="btn btn-purple">Viber</a>
@@ -31,8 +76,6 @@
         <hr>
         
         <a href="https://www.yakaboo.ua/5-krokiv-do-usvidomlennja-bat-kivskoi-mudrosti.html?srsltid=AfmBOoqqv--wgVds4FwXoJf_oDGWqAyJ_gkvXJtGrGnfmfwTsSj9ZYrJ" class="btn btn-dark">Купити мою книгу</a>
-        <!-- Если нужно добавить ссылки на YouTube каналы, разкомментируйте строку ниже: -->
-        <!-- <a href="ССЫЛКА_НА_КАНАЛ" class="btn btn-grey">YouTube: Батьківська кухня</a> -->
     </div>
 </body>
 </html>
