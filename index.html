@@ -4,78 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Денис Шаповалов | Психолог</title>
-    <!-- Шрифты для журнального стиля -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Підключаємо журнальні шрифти (Cormorant Garamond для заголовків, Montserrat для тексту) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Підключаємо Tailwind CSS для професійної верстки -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#fcfbf9', // Теплий білий (як дорогий папір)
+                        textMain: '#222222',
+                        textMuted: '#666666',
+                        borderLight: '#e0e0e0',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #fdfdfd; 
-            color: #1a1a1a; 
-            text-align: center; 
-            padding: 80px 20px; 
-            margin: 0; 
-            line-height: 1.6;
-        }
-        .container { max-width: 500px; margin: 0 auto; }
-        
-        /* Фото */
-        .profile-img { 
-            width: 160px; height: 160px; 
-            border-radius: 50%; object-fit: cover; 
-            margin-bottom: 40px; 
+        body {
+            background-color: #fcfbf9;
+            color: #222222;
         }
         
-        /* Типографика */
-        h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin: 0 0 10px; }
-        .tagline { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 40px; }
-        
-        .bio { font-size: 17px; color: #444; margin-bottom: 50px; text-align: left; }
-        
-        /* Блоки и кнопки */
-        .section-header { 
-            font-family: 'Playfair Display', serif; font-size: 22px; 
-            margin: 50px 0 20px; color: #1a1a1a; 
+        /* Затримка анімації для ефекту послідовної появи блоків */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        /* Стиль для кнопок (тонкі лінії, заповнення при наведенні) */
+        .link-card {
+            transition: all 0.4s ease;
         }
-        
-        .btn { 
-            display: block; width: 100%; padding: 18px; margin: 12px 0; 
-            border: 1px solid #1a1a1a; background: transparent; color: #1a1a1a; 
-            text-decoration: none; font-size: 14px; font-weight: 500;
-            transition: all 0.3s ease;
+        .link-card:hover {
+            background-color: #222222;
+            color: #fcfbf9;
+            border-color: #222222;
         }
-        .btn:hover { background: #1a1a1a; color: #fff; }
-        
-        .footer-note { margin-top: 60px; font-size: 12px; color: #aaa; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Вставьте свое фото -->
-        <img src="my-photo.jpg" alt="Денис Шаповалов" class="profile-img">
+
+<body class="font-sans antialiased min-h-screen flex flex-col items-center py-16 px-5 sm:px-10 selection:bg-gray-200">
+
+    <main class="w-full max-w-lg mx-auto flex flex-col items-center">
         
-        <h1>Денис Шаповалов</h1>
-        <p class="tagline">Психолог, педагог</p>
-        
-        <div class="bio">
-            <p>Психологія — це не про розмови. Це про зміни на краще у вашому житті.</p>
-            <p>Мій підхід об'єднує психотерапію та педагогіку. Працюю з 2016 року. Допомагаю підліткам, дорослим та парам проходити через кризи та будувати здорові стосунки. Досить просто розмов — час для реальних змін.</p>
+        <!-- Фотографія (Тут поки що заглушка, замініть my-photo.jpg на ваше фото) -->
+        <!-- Форма "арки" дуже популярна в сучасному веб-дизайні -->
+        <div class="opacity-0 animate-fade-in-up w-40 h-48 sm:w-48 sm:h-56 mb-8 overflow-hidden rounded-t-full rounded-b-3xl shadow-sm border border-borderLight">
+            <img src="my-photo.jpg" onerror="this.src='https://placehold.co/400x500/e2e8f0/64748b?text=Фото'" alt="Денис Шаповалов" class="w-full h-full object-cover">
         </div>
-        
-        <div class="section-header">Консультації</div>
-        <a href="https://t.me/shapovalovexpert" class="btn">Telegram</a>
-        <a href="viber://chat?number=%2B380964018889" class="btn">Viber</a>
-        <a href="https://wa.me/380964018889" class="btn">WhatsApp</a>
-        
-        <div class="section-header">Проєкти</div>
-        <a href="https://www.yakaboo.ua/5-krokiv-do-usvidomlennja-bat-kivskoi-mudrosti.html" class="btn">Купити мою книгу</a>
-        <a href="https://youtube.com/@mental-waves" class="btn">YouTube: Ментальні хвилі</a>
-        
-        <!-- Место для ваших А -->
-        <div class="section-header">А</div>
-        <a href="А" class="btn">А</a>
-        <a href="А" class="btn">А</a>
-        
-        <div class="footer-note">© 2026 Денис Шаповалов</div>
-    </div>
+
+        <!-- Ім'я та статус -->
+        <h1 class="opacity-0 animate-fade-in-up delay-100 font-serif text-4xl sm:text-5xl font-semibold tracking-wide text-center mb-3">
+            Денис Шаповалов
+        </h1>
+        <p class="opacity-0 animate-fade-in-up delay-100 text-xs sm:text-sm uppercase tracking-[0.2em] text-textMuted text-center mb-10">
+            Психолог, педагог
+        </p>
+
+        <!-- Опис / Біографія -->
+        <div class="opacity-0 animate-fade-in-up delay-200 font-light text-[15px] leading-relaxed text-textMain text-center mb-14 space-y-4">
+            <p class="font-serif italic text-xl sm:text-2xl mb-4">
+                «Психологія — це не про розмови. Це про зміни на краще у вашому житті.»
+            </p>
+            <p>
+                Мій підхід об'єднує психотерапію та педагогіку. Працюю з 2016 року.
+            </p>
+            <p>
+                Допомагаю підліткам, дорослим та парам проходити через кризи та будувати здорові стосунки. Досить просто розмов — час для реальних змін.
+            </p>
+        </div>
+
+        <!-- Блок: Консультації -->
+        <div class="opacity-0 animate-fade-in-up delay-300 w-full flex flex-col gap-4 mb-12">
+            <h2 class="font-serif text-2xl text-center mb-2 italic">Запис на консультацію</h2>
+            
+            <a href="https://t.me/shapovalovexpert" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium">
+                Telegram
+            </a>
+            <a href="viber://chat?number=%2B380964018889" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium">
+                Viber
+            </a>
+            <a href="https://wa.me/380964018889" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium">
+                WhatsApp
+            </a>
+        </div>
+
+        <!-- Блок: Матеріали -->
+        <div class="opacity-0 animate-fade-in-up delay-400 w-full flex flex-col gap-4 mb-12">
+            <h2 class="font-serif text-2xl text-center mb-2 italic">Мої проєкти</h2>
+            
+            <a href="https://www.yakaboo.ua/5-krokiv-do-usvidomlennja-bat-kivskoi-mudrosti.html?srsltid=AfmBOoqqv--wgVds4FwXoJf_oDGWqAyJ_gkvXJtGrGnfmfwTsSj9ZYrJ" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium bg-gray-50">
+                Купити мою книгу
+            </a>
+            
+            <!-- Плейсхолдер А -->
+            <a href="А" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium">
+                А
+            </a>
+        </div>
+
+        <!-- Блок: Плейсхолдер А (Наприклад, для соцмереж або статей) -->
+        <div class="opacity-0 animate-fade-in-up delay-400 w-full flex flex-col gap-4 mb-12">
+            <h2 class="font-serif text-2xl text-center mb-2 italic">А</h2>
+            
+            <a href="А" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium">
+                А
+            </a>
+            <a href="А" class="link-card block w-full py-4 px-6 border border-borderLight rounded-2xl text-center uppercase tracking-wider text-xs font-medium">
+                А
+            </a>
+        </div>
+
+        <!-- Підвал / Footer -->
+        <footer class="opacity-0 animate-fade-in-up delay-400 mt-10 text-center">
+            <p class="text-[10px] uppercase tracking-widest text-gray-400">
+                © 2026 Денис Шаповалов <br><br> А
+            </p>
+        </footer>
+
+    </main>
 </body>
 </html>
